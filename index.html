@@ -39,7 +39,7 @@
     </style>
 	</head>
 	<body>
-		<div id="container"></div>
+		<div id="container" height="100%"></div>
 		<script>
 			var arr_positions = new Array(
 				[116.347402,40.038844], //
@@ -102,16 +102,7 @@
         		zoom: 11
 			});
 			var markers = [];
-			
-			/*
-			var drivingOption = {
-                policy: AMap.DrivingPolicy.LEAST_TIME,
-                map: map
-            };
-			
-			var driving = new AMap.Driving(drivingOption); //构造驾车导航类
-			*/
-			
+						
 			 //在指定位置打开信息窗体
 			function openInfo(aIndex) {
 				//构建信息窗体中显示的内容
@@ -119,7 +110,7 @@
 				cont.push("");
 				cont.push(arr_details[aIndex]);
 				cont.push("");
-				cont.push("<div align='right'><input type='button' class='btn' value='打开高德地图' onClick='javascript: markers["+aIndex+"].markOnAMAP({position:arr_positions["+aIndex+"]});'/></div>");
+				cont.push("<div align='right'><input type='button' class='btn' value='打开高德地图' onclick='javascript: markers["+aIndex+"].markOnAMAP({position:arr_positions["+aIndex+"]});'/></div>");
 
 				infoWindow = new AMap.InfoWindow({
 					content: cont.join("<br/>")  //使用默认信息窗体框样式，显示信息内容
